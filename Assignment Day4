@@ -1,0 +1,56 @@
+package Opps;
+public class AssignMnc {
+	
+	
+abstract  class AssignMnc1{
+	
+
+ abstract  void Mnc1();
+ abstract  void Mnc2();
+  AssignMnc1() 
+  {
+	 System.out.println("ins const");
+ }
+  void MncT()
+  {
+	  System.out.println("normal method");
+  }
+}
+
+ abstract class Infosys extends AssignMnc1{
+	 abstract  void Mnc1(); 
+ }
+ class Hello extends Infosys{
+	   void Mnc1()
+	   {
+		   System.out.println("hello class with abstract 1");
+	   }
+	   void Mnc2()
+	   {
+		   System.out.println("hello class abstract 2");
+	   }
+	   void Corporate()
+	   {
+		   System.out.println("giant coorporate");
+	   }
+}
+ 
+
+
+
+public static void main(String[]args) {
+	
+	
+			Infosys obj=new Hello();
+			obj.Mnc1();
+			obj.Mnc2();
+			obj.MncT();
+	Hello j=new Hello();
+	j.Corporate();
+	
+
+	
+}
+}
+
+
