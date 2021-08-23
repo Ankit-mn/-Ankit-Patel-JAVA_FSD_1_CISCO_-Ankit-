@@ -1,0 +1,65 @@
+package collection;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+public class AssignmentCo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		LinkedHashSet<Comparable>  lh1=new LinkedHashSet<Comparable>();
+		LinkedHashSet<Integer>  lh2=new LinkedHashSet<Integer>();
+		
+		
+		Scanner s =new Scanner(System.in);
+		System.out.println("Enter the number");
+		
+		int n7=s.nextInt();
+		int n1=s.nextInt();
+		int n2=s.nextInt();
+		int n3=s.nextInt();
+		int n4=s.nextInt();
+		int n5=s.nextInt();
+		int n6=s.nextInt();
+		int n8=s.nextInt();
+		
+		lh1.add(20);
+		lh1.add(40);
+		lh1.add(20f);
+		lh1.add(204f);
+		lh1.add('y');
+		lh1.add("true");
+		
+		System.out.println("lh1"+lh1);
+		
+		lh2.add(n1);
+		lh2.add(n2);
+		lh2.add(n3);
+		lh2.add(n4);
+		lh2.add(n5);
+		lh2.add(n6);
+		lh2.add(n7);
+		System.out.println("lh2"+lh2);
+		
+		TreeSet<String> ts=new TreeSet<String>();{
+			ts.add("Ruby");
+			ts.add("java");
+			ts.add("perl");
+			ts.add("javascript");
+			ts.add("python");
+			System.out.println("TreeSet is"+ts);
+			System.out.println("Size  of TreeSet is"+ts.size());
+			System.out.println("Does TreeSet contain this 'Germeny' element "+ts.contains("Germeny"));
+			System.out.println("remove the TreeSet element "+ts.remove("Ruby"));
+			System.out.println("TreeSet is empty"+ts.isEmpty());
+		     System.out.println("add value:"+ts.add("java")+""+ts.add("perl")+""+ts.add("python"));
+		     System.out.println("check"+ts.contains("java"));
+		     ts.clear();
+		     System.out.println("after clear data"+ts);
+		
+		
+	}
+	
+	}
+}
