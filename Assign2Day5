@@ -1,0 +1,45 @@
+package collection;
+import java.util.Iterator;
+
+import java .util .PriorityQueue;
+public class QueExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+PriorityQueue<String> queue=new PriorityQueue<String> ();
+queue.add("India");
+queue.add("Nepal");
+queue.add("Japan");
+queue.add("Iraq");
+queue.add("Iran");
+queue.add("Indonesia");
+queue.add("Bangladesh");
+
+
+
+
+
+
+
+
+System.out.println("Priority Queue is : "+queue);
+System.out.println("Show the 1st value "+queue.element());
+
+queue.remove("Japan");
+queue.remove("Nepal");
+System.out.println("Priority Queue after removing elements is : "+queue);
+
+queue.add("Iran");
+queue.add("Iraq");
+System.out.println("Priority Queue after adding elements is : "+queue);
+
+queue.peek();
+System.out.println("Show the 1st value "+queue.element());
+}
+
+
+
+
+
+	}
+
