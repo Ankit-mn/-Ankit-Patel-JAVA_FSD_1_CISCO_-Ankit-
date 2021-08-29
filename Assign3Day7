@@ -1,0 +1,76 @@
+package Assignment_Day7;
+
+abstract class Pen{
+	abstract void write();
+	abstract void refil();
+}
+
+ class FountainPen extends Pen{
+	void changeNib() {
+		System.out.println("nib change");
+	}
+
+	
+	void write() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	void refil() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+class Monkey{
+	void jump() {
+		System.out.println("jump");
+	}
+	void bite() {
+		System.out.println("bite");
+	}
+}
+
+interface BasicAnimal{
+	void eat();
+	void sleep();
+	
+}
+class Human extends Monkey implements BasicAnimal{
+	public void eat() {
+		System.out.println("eating");
+	}
+	
+	public void sleep() {
+		System.out.println("sleep");
+	}
+}
+
+
+
+
+public class Oops_Mo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+FountainPen pen=new FountainPen();
+pen.changeNib();
+
+Human hopp=new Human();
+hopp.sleep();
+
+
+Monkey m1=new Human();
+m1.jump();
+m1.bite();
+
+
+BasicAnimal Billu=new Human();
+Billu.eat();
+Billu.sleep();
+
+
+	}
+
+}
