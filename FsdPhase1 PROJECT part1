@@ -1,0 +1,129 @@
+package FsdPhase1;
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
+/**
+ * This class we have used to display the user interface and all the contents that are available in the application.
+ * 
+ * @author sir
+ *
+ */
+public class MainT {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+boolean running = true;
+//Application name and the developer details 
+/**
+ * @author sir
+ * @version
+ */
+		System.out.println("WELCOME");
+		System.out.println("You are in the application");
+
+System.out.println("This application is developed by :Ankit");
+		Scanner sc = new Scanner(System.in);
+	
+		//object for the class FileWelcome
+		FileWelcome fw = new FileWelcome();
+		
+		char ch=0;
+		
+		do
+		{
+			System.out.println("\n Menu Contents");
+			
+			System.out.println("\n1. Show File");
+			System.out.println("\n2. Add File to folder");
+			System.out.println("\n3. Delete File from folder");
+			System.out.println("\n4. Search File from folder");
+			System.out.println("\n5. Exit");
+			System.out.println("\n -----Please  provide the correct filename for searching or deleting files----");
+			System.out.println();
+			int choice = sc.nextInt();
+			switch(choice)
+			{
+			case 1:
+				//step into the show file
+				System.out.println("File opend");
+				fw.openFile(null);
+				
+				break;
+				
+				
+			case 2:
+				//Add a file to the existing directory list
+				System.out.println("\n Enter the  Name of File: ");
+				try
+				{
+					String fileToAdd = sc.next();
+					
+					fw.addFile(fileToAdd, sc);   
+				}
+				catch (Exception e)
+				{
+					System.out.println(e.getMessage());
+				}
+				break;
+			case 3:
+				//Delete  user specified file
+				System.out.println("Enter the file name to Delete from the \"Ankit\"folder: ");
+				try
+				{
+					String fileToDelete = sc.next();
+					
+					fw.deleteFile(fileToDelete, sc);
+				}
+				catch (InvalidFileException e) 
+				{
+					System.out.println(e.getMessage());
+				}
+				break;
+			case 4:
+				// Search for user specified file 
+				System.out.println("Enter the file name to search from the \"Ankit\" folder: ");
+				try
+				{
+					String fileName = sc.next();
+				
+					FileWelcome.openFile("C://Users//sir//Desktop//Ankit//");
+					FileWelcome.display(fileName, "C://Users//sir//Desktop//Ankit//");
+				}
+				catch (Exception e) 
+				{
+					// TODO: handle exception
+				}
+					break;
+				
+			case 5:
+				//Exit/ closing  the program
+				System.out.println("Thank You!!!!!: ");
+				running = false;
+				
+				sc.close();
+				
+				System.exit(0); //using exit method to exit the program
+			default :
+				System.out.println("Please Enter the Valid Number!! \n");
+				break;
+			} 
+			fw.Endisplay();            
+            System.out.println("\nDo you want to continue (Type y or n) \n");
+            ch = sc.next().charAt(0);
+			 
+			
+		} while (ch == 'Y'|| ch == 'y');
+		{
+			if(running == true);
+		}
+				
+	}
+}
+
+    class InvalidFileException extends Exception
+{
+	public InvalidFileException(String s)
+	{
+		super(s);
+	}
+}
